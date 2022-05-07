@@ -14,10 +14,44 @@ class _HomePageState extends State<HomePage> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("HomePage"),
+          title: Text("Ponto Eletronico"),
         ),
-        body: Text("Homepag main"),
+        body: ListView.builder(
+    itemBuilder: (BuildContext build,int index) {
+
+    return Card(
+      color: Colors.green,
+
+      child: InkWell(
+        splashColor: Colors.red.withAlpha(50),
+        onTap: (){
+          Navigator.of(context).pushNamed('/seeEmployee');
+        },
+        child: SizedBox(
+          height: 160,
+
+          child: Center(
+            child: Text(
+              "Elenilton Dezengrini",
+               style: TextStyle(fontSize: 40),
+            ),
+          ),
+        ),
+      )
+    );
+
+
+    }
+    ),
+        floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.grey,
+
+        onPressed: (){
+          Navigator.of(context).pushNamed('/addEmployee');
+        },
+        child: Icon(Icons.add),
       ),
+      )
     );
   }
 }
