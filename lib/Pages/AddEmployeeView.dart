@@ -1,3 +1,4 @@
+import 'package:eletronic_point/Model/MainModel.dart';
 import 'package:flutter/material.dart';
 
 class AddEmployeeView extends StatefulWidget {
@@ -10,6 +11,7 @@ class AddEmployeeView extends StatefulWidget {
 class _AddEmployeeViewState extends State<AddEmployeeView> {
   @override
   Widget build(BuildContext context) {
+    Employee newEmployee= new Employee(name: "");
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
@@ -20,7 +22,7 @@ class _AddEmployeeViewState extends State<AddEmployeeView> {
                   onTap: () {
                     Navigator.of(context).pushNamed('/');
                   },
-                  child: Icon(Icons.assignment_return),
+                  child: Icon(Icons.keyboard_return),
                 ),
                 Container(
                   width: 30,
@@ -35,6 +37,9 @@ class _AddEmployeeViewState extends State<AddEmployeeView> {
             child: Column(
               children: [
                 TextField(
+                  onChanged: (String text){
+                    newEmployee.name = text;
+                  },
                   decoration: InputDecoration(
                     hintText: "Digite o nome aqui",
                     labelText: "Nome do colaborador",
@@ -58,8 +63,11 @@ class _AddEmployeeViewState extends State<AddEmployeeView> {
           ),
           floatingActionButton: FloatingActionButton(
             backgroundColor: Colors.grey,
-            onPressed: () {},
-            child: Icon(Icons.add),
+            onPressed: () {
+              MainModel.instance.employees.add(newEmployee);
+              Navigator.of(context).pushNamed('/');
+            },
+            child: Icon(Icons.save),
           ),
         ));
   }

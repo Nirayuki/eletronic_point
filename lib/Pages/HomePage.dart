@@ -1,3 +1,4 @@
+import 'package:eletronic_point/Model/MainModel.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,6 +18,7 @@ class _HomePageState extends State<HomePage> {
           title: Text("Ponto Eletronico"),
         ),
         body: ListView.builder(
+          itemCount: MainModel.instance.employees.length,
     itemBuilder: (BuildContext build,int index) {
 
     return Card(
@@ -25,14 +27,14 @@ class _HomePageState extends State<HomePage> {
       child: InkWell(
         splashColor: Colors.red.withAlpha(50),
         onTap: (){
-          Navigator.of(context).pushNamed('/seeEmployee');
+          Navigator.of(context).pushNamed('/seeEmployee', arguments: {'identifier': index});
         },
         child: SizedBox(
           height: 160,
 
           child: Center(
             child: Text(
-              "Elenilton Dezengrini",
+               MainModel.instance.employees[index].name,
                style: TextStyle(fontSize: 40),
             ),
           ),
