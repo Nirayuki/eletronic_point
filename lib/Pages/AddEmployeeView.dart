@@ -11,7 +11,6 @@ class AddEmployeeView extends StatefulWidget {
 class _AddEmployeeViewState extends State<AddEmployeeView> {
   @override
   Widget build(BuildContext context) {
-    Employee newEmployee= new Employee(name: "");
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
@@ -37,9 +36,7 @@ class _AddEmployeeViewState extends State<AddEmployeeView> {
             child: Column(
               children: [
                 TextField(
-                  onChanged: (String text){
-                    newEmployee.name = text;
-                  },
+                  onChanged: (String text) {},
                   decoration: InputDecoration(
                     hintText: "Digite o nome aqui",
                     labelText: "Nome do colaborador",
@@ -63,10 +60,7 @@ class _AddEmployeeViewState extends State<AddEmployeeView> {
           ),
           floatingActionButton: FloatingActionButton(
             backgroundColor: Colors.grey,
-            onPressed: () {
-              MainModel.instance.employees.add(newEmployee);
-              Navigator.of(context).pushNamed('/');
-            },
+            onPressed: () {},
             child: Icon(Icons.save),
           ),
         ));

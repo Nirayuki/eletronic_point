@@ -15,8 +15,9 @@ class MyApp extends StatelessWidget {
         routes: {
           '/': (context) => HomePage(),
           '/addEmployee': (context) => AddEmployeeView(),
-          '/seeEmployee': (context) => EmployeeView(),
+          // '/seeEmployee': (context) => EmployeeView(),
           '/editEmployee': (context) => EditEmployeeView(),
+          '/seeEmployee': (context) => EmployeeView(),
         });
   }
 }
