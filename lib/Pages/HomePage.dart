@@ -11,6 +11,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    DateTime.now().hour;
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
@@ -18,17 +19,31 @@ class _HomePageState extends State<HomePage> {
             title: Text("Ponto Eletronico"),
           ),
           body: Card(
-              color: Colors.green,
+              color: (DateTime.now().hour>=8 && DateTime.now().hour<=13)?Colors.red:Colors.green,
               child: InkWell(
-                splashColor: Colors.red.withAlpha(50),
-                onTap: () {},
+                splashColor: Colors.green.withAlpha(50),
+                onTap: () {
+                  setState(() {
+                    print(DateTime.now().hour);
+                  });
+                },
                 child: SizedBox(
-                  height: 160,
+                  height: 10000,
                   child: Center(
-                    child: Text(
-                      "Sim",
-                      style: TextStyle(fontSize: 40),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                         Icons.fingerprint_outlined,size: 120,
+                        ),
+                        Text(
+                          "Ponto Eletronico",
+                          style: TextStyle(fontSize:30),
+                        ),
+
+                      ],
                     ),
+
                   ),
                 ),
               )),
@@ -37,7 +52,7 @@ class _HomePageState extends State<HomePage> {
             onPressed: () {
               Navigator.of(context).pushNamed('/addEmployee');
             },
-            child: Icon(Icons.add),
+            child: Icon(Icons.announcement_sharp),
           ),
         ));
   }
