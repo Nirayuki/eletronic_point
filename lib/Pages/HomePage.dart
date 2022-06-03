@@ -1,9 +1,10 @@
 import 'package:eletronic_point/Model/MainModel.dart';
 import 'package:flutter/material.dart';
+import 'package:eletronic_point/Pages/AddEmployeeView.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
-
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -11,6 +12,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    int TempoEntrada;
     DateTime.now().hour;
     return MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -23,9 +25,19 @@ class _HomePageState extends State<HomePage> {
               child: InkWell(
                 splashColor: Colors.green.withAlpha(50),
                 onTap: () {
-                  setState(() {
-                    print(DateTime.now().hour);
-                  });
+                  if(MainModel.instance.TempoEntrada == 0){
+                    setState(() {
+                      MainModel.instance.TempoEntrada = DateTime.now().hour;
+                      MainModel.instance.TempoSaida = 0;
+                    });
+                  } else {
+                    setState(() {
+                      MainModel.instance.TempoSaida = DateTime.now().hour;
+                      MainModel.instance.TempoEntrada = 0;
+                    });
+                  }
+                  print(MainModel.instance.TempoSaida);
+                  print(MainModel.instance.TempoEntrada);
                 },
                 child: SizedBox(
                   height: 10000,

@@ -1,14 +1,16 @@
 import 'package:eletronic_point/Model/MainModel.dart';
+import 'package:eletronic_point/Pages/HomePage.dart';
 import 'package:flutter/material.dart';
-
+import 'HomePage.dart';
 class AddEmployeeView extends StatefulWidget {
-  const AddEmployeeView({Key? key}) : super(key: key);
-
+  final TempoEntrada;
+  const AddEmployeeView({Key? key, this.TempoEntrada}) : super(key: key);
   @override
   State<AddEmployeeView> createState() => _AddEmployeeViewState();
 }
 
 class _AddEmployeeViewState extends State<AddEmployeeView> {
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -35,32 +37,18 @@ class _AddEmployeeViewState extends State<AddEmployeeView> {
             padding: const EdgeInsets.only(top: 20, left: 10, right: 10),
             child: Column(
               children: [
-                TextField(
-                  onChanged: (String text) {},
-                  decoration: InputDecoration(
-                    hintText: "Digite o nome aqui",
-                    labelText: "Nome do colaborador",
-                    labelStyle: TextStyle(fontSize: 17),
-                    border: OutlineInputBorder(),
-                  ),
-                ),
                 Container(
                   height: 10,
                 ),
-                TextField(
-                  decoration: InputDecoration(
-                    hintText: "Teste",
-                    labelText: "teste",
-                    labelStyle: TextStyle(fontSize: 17),
-                    border: OutlineInputBorder(),
-                  ),
-                ),
+
               ],
             ),
           ),
           floatingActionButton: FloatingActionButton(
-            backgroundColor: Colors.grey,
-            onPressed: () {},
+            backgroundColor: Colors.green,
+            onPressed: () {
+              print(MainModel.instance.TempoEntrada);
+            },
             child: Icon(Icons.save),
           ),
         ));
