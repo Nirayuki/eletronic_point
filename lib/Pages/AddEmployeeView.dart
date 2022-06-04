@@ -47,7 +47,7 @@ class _AddEmployeeViewState extends State<AddEmployeeView> {
           floatingActionButton: FloatingActionButton(
             backgroundColor: Colors.green,
             onPressed: () {
-              print(MainModel.instance.TempoEntrada);
+              //print(MainModel.instance.TempoEntrada);
             },
             child: Icon(Icons.save),
           ),
