@@ -1,42 +1,75 @@
 import 'package:flutter/material.dart';
 
 class MainModel {
-  static  MainModel instance = MainModel();
+  static MainModel instance = MainModel();
 
-  String? mes;
-  int? dia;
-  int? manhaEntrada;
-  int? manhaSaida;
-  int? tardeEntrada;
-  int? tardeSaida;
+  var days = [20, 21, 22, 23, 24, 25];
 
-  MainModel(
-      {this.mes,
-        this.dia,
-        this.manhaEntrada,
-        this.manhaSaida,
-        this.tardeEntrada,
-        this.tardeSaida});
+  final manhaEntrada = [];
+  final manhaSaida = [];
+  final tardeEntrada = [];
+  final tardeSaida = [];
 
-  MainModel.fromJson(Map<String, dynamic> json) {
-    mes = json['mes'];
-    dia = json['dia'];
-    manhaEntrada = json['manhaEntrada'];
-    manhaSaida = json['manhaSaida'];
-    tardeEntrada = json['tardeEntrada'];
-    tardeSaida = json['tardeSaida'];
-  }
+  var segunda = {
+    "dia": 20,
+    "entradaManha": "",
+    "SaidaManha": "",
+    "entradaTarde": "",
+    "saidaTarde": "",
+    "passou": false,
+    "steps": 1,
+    "total": "",
+  };
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['mes'] = this.mes;
-    data['dia'] = this.dia;
-    data['manhaEntrada'] = this.manhaEntrada;
-    data['manhaSaida'] = this.manhaSaida;
-    data['tardeEntrada'] = this.tardeEntrada;
-    data['tardeSaida'] = this.tardeSaida;
-    return data;
-  }
+  var terca = {
+    "dia": 21,
+    "entradaManha": "",
+    "SaidaManha": "",
+    "entradaTarde": "",
+    "saidaTarde": "",
+    "passou": false,
+    "steps": 1
+  };
 
+  Map<String, int> quarta = {
+    "dia": 22,
+    "entradaManha": 0,
+    "SaidaManha": 0,
+    "entradaTarde": 0,
+    "saidaTarde": 0,
+    "steps": 1,
+    "total": 0,
+  };
+
+  var quinta = {
+    "dia": 23,
+    "entradaManha": "",
+    "SaidaManha": "",
+    "entradaTarde": "",
+    "saidaTarde": "",
+    "passou": false,
+    "steps": 1,
+  };
+
+  var sexta = {
+    "dia": 24,
+    "entradaManha": "",
+    "SaidaManha": "",
+    "entradaTarde": "",
+    "saidaTarde": "",
+    "passou": false,
+    "steps": 1
+  };
+
+  var sabado = {
+    "dia": 25,
+    "entradaManha": "",
+    "SaidaManha": "",
+    "entradaTarde": "",
+    "saidaTarde": "",
+    "passou": false,
+    "steps": 1
+  };
+
+  var total = [0, 0, 0, 0, 0, 0];
 }
-
