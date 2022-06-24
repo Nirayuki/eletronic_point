@@ -138,8 +138,8 @@ class _EmployeeViewState extends State<EmployeeView> {
                                     .toString()
                                     .substring(0, 8)),
                         Text(SegundaModel.instance.banco == null
-                            ? "Baco de horas: 0:00:00"
-                            : "Baco de horas: " +
+                            ? "Banco de horas: 0:00:00"
+                            : "Banco de horas: " +
                                 SegundaModel.instance.banco
                                     .toString()
                                     .substring(0, 8)),
@@ -163,8 +163,8 @@ class _EmployeeViewState extends State<EmployeeView> {
                                     .toString()
                                     .substring(0, 8)),
                         Text(TercaModel.instance.banco == null
-                            ? "Baco de horas: 0:00:00"
-                            : "Baco de horas: " +
+                            ? "Banco de horas: 0:00:00"
+                            : "Banco de horas: " +
                                 TercaModel.instance.banco
                                     .toString()
                                     .substring(0, 8)),
@@ -188,8 +188,8 @@ class _EmployeeViewState extends State<EmployeeView> {
                                     .toString()
                                     .substring(0, 8)),
                         Text(QuartaModel.instance.banco == null
-                            ? "Baco de horas: 0:00:00"
-                            : "Baco de horas: " +
+                            ? "Banco de horas: 0:00:00"
+                            : "Banco de horas: " +
                                 QuartaModel.instance.banco
                                     .toString()
                                     .substring(0, 8)),
@@ -213,8 +213,8 @@ class _EmployeeViewState extends State<EmployeeView> {
                                     .toString()
                                     .substring(0, 8)),
                         Text(QuintaModel.instance.banco == null
-                            ? "Baco de horas: 0:00:00"
-                            : "Baco de horas: " +
+                            ? "Banco de horas: 0:00:00"
+                            : "Banco de horas: " +
                                 QuintaModel.instance.banco
                                     .toString()
                                     .substring(0, 8)),
@@ -238,8 +238,8 @@ class _EmployeeViewState extends State<EmployeeView> {
                                     .toString()
                                     .substring(0, 8)),
                         Text(SextaModel.instance.banco == null
-                            ? "Baco de horas: 0:00:00"
-                            : "Baco de horas: " +
+                            ? "Banco de horas: 0:00:00"
+                            : "Banco de horas: " +
                                 SextaModel.instance.banco
                                     .toString()
                                     .substring(0, 8)),
